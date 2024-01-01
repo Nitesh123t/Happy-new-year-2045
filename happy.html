@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Name</title>
+    <style>
+        body {
+            text-align: center;
+            margin: 150px;
+            background-color: #66FFFF; /* Light blue background */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        button {
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #4285f4; /* Google blue color for the button */
+            color: #fff; /* White text color */
+            border: none;
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+
+        p {
+            color: #333;
+            font-family: 'Verdana', sans-serif;
+        }
+
+        /* Animation to change text color every second */
+        @keyframes changeTextColor {
+            0% {
+                color: #4285f4;
+            }
+            50% {
+                color: #34a853;
+            }
+            100% {
+                color: #ea4335;
+            }
+        }
+
+        /* Apply the animation to the h1 element */
+        h1 {
+            animation: changeTextColor 1s infinite;
+        }
+    </style>
+    <script>
+        function showGreeting() {
+            var name = document.getElementById("nameInput").value;
+            document.getElementById("greeting").innerHTML = "Happy New Year, " + name + "!";
+            document.getElementById("namePage").style.display = "none";
+            document.getElementById("greetingPage").style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <div id="namePage">
+        <h1>Enter Your Name</h1>
+        <input type="text" id="nameInput" placeholder="Your Name">
+        <br>
+        <button onclick="showGreeting()">Submit</button>
+    </div>
+
+    <div id="greetingPage" style="display: none;">
+        <h1 id="greeting">Happy New Year!</h1>
+        <p>Wishing you a year filled with joy, success, and prosperity.</p>
+    </div>
+</body>
+</html>
